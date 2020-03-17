@@ -69,12 +69,21 @@ namespace WebApi2.Services
         }
 
 
-        public object GetCircuitosDatos(int GrupoPrograma, int Programa, object JSonSalida)
+        public object GetCircuitosDatos(int GrupoPrograma, int Programa,string actor, int usuarioIDConsulta, string usuario, int formatoConsulta,  object JSonSalida)
         {
-           
+ 
             Diccionario dic = new Diccionario();
             dic.Add("GrupoPrograma", GrupoPrograma);
             dic.Add("Programa", Programa);
+            dic.Add("Actor", actor);
+            dic.Add("UsuarioId", usuarioIDConsulta);
+            dic.Add("Usuario", usuario);
+            dic.Add("Formato", formatoConsulta);
+
+         
+
+
+
             dic.Add("JSonSalida", JSonSalida);
 
             using (var conn = new Conexion(connString))
